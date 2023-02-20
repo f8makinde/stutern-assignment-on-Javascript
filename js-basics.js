@@ -7,24 +7,22 @@
 
 // Using if…else conditional statement, write a program that will help Bolatito determine the subjects she will be taking for the session using her class group. Also, in the case of an invalid class group, your output should be the General subjects. 
 
-function courseSubject(subject){
-    if(subject === 'science'){
+function classGroup(classGroup){
+   
+    if((classGroup === 'Science')){
         return ['Physics', ' Chemistry', 'Biology', 'Technical Drawing '].join(', ')
     }
-    else if(subject === 'socialScience'){
+    else if(classGroup === 'Social Science'){
         return ['Accounting', 'Commerce', 'Marketing', 'Geography'].join(' ,')
     }
-    else if (subject === 'arts'){
+    else if (classGroup === 'Arts'){
         return ['Government', 'Economics', 'Literature', 'History'].join(' ,')
-    }
-    else if (subject === 'general'){
-        return ['English', 'Mathematics'].join(' ,')
     }
     else{
         return ['English', 'Mathematics'].join(' ,') 
     }
 }
- console.log(courseSubject('good'));
+ console.log(classGroup('Science'));
 
  for(let i = 1; i < 20; i += 7){
     console.log(i)
@@ -43,11 +41,16 @@ function courseSubject(subject){
 // “The number 64 is the power of 2 nearest to 50.”
 
 
-function highestPowerof2(n)
-{
-    let p = parseInt(Math.log(n) / Math.log(2), 10);
-    return Math.pow(2, p);
-}
-
-
-console.log(highestPowerof2(10));
+function findNearestPowerOfTwo(num) {
+    let pwr = 1; // start with 2^0
+    while (pwr <= num) {
+      pwr *= 2;
+    }
+    // pwr is now greater than num
+    if (num - pwr/2 <= pwr - num) {
+      pwr /= 2;
+    }
+    console.log(`The number ${pwr} is the power of 2 nearest to ${num}.`);
+  }
+  findNearestPowerOfTwo(40);
+  findNearestPowerOfTwo(50);
